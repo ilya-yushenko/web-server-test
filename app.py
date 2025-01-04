@@ -1,11 +1,12 @@
+import os
 from flask import Flask, render_template, request, jsonify
 import requests
 
 app = Flask(__name__)
 
 # Конфигурация Telegram
-TELEGRAM_BOT_TOKEN = '8040320732:AAFSMFvJnQFcbylMN09Ccy3jjoqFjNRVqnY'
-TELEGRAM_CHAT_ID = '-4777705074'
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
 def send_to_telegram(order):
     """Отправка сообщения в Telegram"""
@@ -54,6 +55,9 @@ def order():
     else:
         return jsonify({'message': 'Ошибка при отправке заказа менеджеру. Попробуйте снова.'}), 500
 
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Получаем PORT из окружения или используем 5000
+    app.run(host='0.0.0.0', port=port)
