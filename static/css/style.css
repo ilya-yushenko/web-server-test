@@ -1,14 +1,201 @@
+/* Загальні стилі */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
 }
 
-header {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100px;
+/* Заголовки розділів */
+h2 {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Шапка */
+.header-landing {
+    background: url('/static/images/header_banner.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.header-landing .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.header-landing .container {
+    position: relative;
+    z-index: 2;
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: #f0a500 !important; /* Жёлтый фон */
+    color: #fff !important; /* Белый текст */
+    border: none !important;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #d98c00 !important;
+    color: #fff !important;
+}
+
+/* Карточки продуктів */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
 }
 
 .card img {
     height: 200px;
     object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    min-height: 70px;
+}
+
+/* Розділ Оформлення замовлення */
+#order {
+    background: #fafafa;
+    padding: 50px 0;
+    border-radius: 10px;
+}
+
+#order h2 {
+    margin-bottom: 1rem;
+}
+
+#orderFormSection {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#orderFormSection .form-label {
+    font-weight: 500;
+    color: #555;
+}
+
+#orderFormSection .form-control {
+    border-radius: 5px;
+}
+
+#orderFormSection textarea {
+    resize: none;
+}
+
+/* Поля Продукт і Кількість */
+#productNameSection {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#productQuantitySection {
+    max-width: 150px;
+    text-align: center;
+}
+
+/* Розділ "Зв'язатися з нами" */
+#contact {
+    background: #fafafa;
+    padding: 50px 0;
+    border-radius: 10px;
+}
+
+#contactForm {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contactForm .form-label {
+    font-weight: 500;
+    color: #555;
+}
+
+#contactForm textarea {
+    resize: none;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary, .btn-outline-light {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .row .col-md-8,
+    .row .col-md-4 {
+        margin-bottom: 10px;
+    }
 }
