@@ -37,109 +37,7 @@
 <!-- Products Section -->
 <section id="products" class="container my-5 text-center">
     <h2 class="text-center mb-4">Наша продукція</h2>
-    <div class="row">
-
-        <!-- Липовий мед -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="{{ url_for('static', filename='images/img_linden_honey.webp') }}" class="card-img-top"
-                     alt="Липовий мед">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-center">Липовий мед</h5>
-                    <p class="card-text flex-grow-1 text-center">Ароматний мед з ніжним квітковим присмаком, багатий на
-                        корисні властивості.</p>
-                    <p class="text-center mt-3"><strong>200 грн / 500 г</strong></p>
-                    <button class="btn btn-primary w-100 mt-3 buy-btn" data-product="Липовий мед" data-quantity="500 г">
-                        Купити
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Гречаний мед -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="{{ url_for('static', filename='images/img_buckwheat_honey.webp') }}" class="card-img-top"
-                     alt="Гречаний мед">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-center">Гречаний мед</h5>
-                    <p class="card-text flex-grow-1 text-center">Насичений темний мед із яскравим ароматом та високим
-                        вмістом заліза.</p>
-                    <p class="text-center mt-3"><strong>180 грн / 500 г</strong></p>
-                    <button class="btn btn-primary w-100 mt-3 buy-btn" data-product="Гречаний мед"
-                            data-quantity="500 г">Купити
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Акацієвий мед -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="{{ url_for('static', filename='images/img_acacia_honey.webp') }}" class="card-img-top"
-                     alt="Акацієвий мед">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-center">Акацієвий мед</h5>
-                    <p class="card-text flex-grow-1 text-center">Світлий, прозорий мед з ніжним, солодким смаком
-                        акацієвих квітів.</p>
-                    <p class="text-center mt-3"><strong>220 грн / 500 г</strong></p>
-                    <button class="btn btn-primary w-100 mt-3 buy-btn" data-product="Акацієвий мед"
-                            data-quantity="500 г">Купити
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Соняшниковий мед -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="{{ url_for('static', filename='images/img_sunflower_honey.webp') }}" class="card-img-top"
-                     alt="Соняшниковий мед">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-center">Соняшниковий мед</h5>
-                    <p class="card-text flex-grow-1 text-center">Золотистий мед із приємним фруктовим ароматом та
-                        високим вмістом глюкози.</p>
-                    <p class="text-center mt-3"><strong>150 грн / 500 г</strong></p>
-                    <button class="btn btn-primary w-100 mt-3 buy-btn" data-product="Соняшниковий мед"
-                            data-quantity="500 г">Купити
-                    </button>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Ріпаковий мед -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="{{ url_for('static', filename='images/img_rapeseed_honey.webp') }}" class="card-img-top"
-                     alt="Ріпаковий мед">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-center">Ріпаковий мед</h5>
-                    <p class="card-text flex-grow-1 text-center">Кремовий мед з ніжною текстурою та тонким ароматом.</p>
-                    <p class="text-center mt-3"><strong>170 грн / 500 г</strong></p>
-                    <button class="btn btn-primary w-100 mt-3 buy-btn" data-product="Ріпаковий мед"
-                            data-quantity="500 г">Купити
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Мед з різнотрав'я -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="{{ url_for('static', filename='images/img_mixed_herbs_honey.webp') }}" class="card-img-top"
-                     alt="Мед з різнотрав'я">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <h5 class="card-title text-center">Мед із різнотрав'я</h5>
-                    <p class="card-text flex-grow-1 text-center">Ароматний мед із багатим букетом польових трав.</p>
-                    <p class="text-center mt-3"><strong>190 грн / 500 г</strong></p>
-                    <button class="btn btn-primary w-100 mt-3 buy-btn" data-product="Мед із різнотрав'я"
-                            data-quantity="500 г">Купити
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="productList" class="row"></div>
 </section>
 
 <!-- Order Section -->
@@ -156,12 +54,6 @@
                         <label for="productNameSection" class="form-label">Продукт</label>
                         <select class="form-select" id="productNameSection" required>
                             <option value="" disabled selected>Оберіть продукт</option>
-                            <option value="Липовий мед">Липовий мед</option>
-                            <option value="Гречаний мед">Гречаний мед</option>
-                            <option value="Акацієвий мед">Акацієвий мед</option>
-                            <option value="Соняшниковий мед">Соняшниковий мед</option>
-                            <option value="Ріпаковий мед">Ріпаковий мед</option>
-                            <option value="Мед із різнотрав'я">Мед із різнотрав'я</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -248,6 +140,74 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        const productSelect = document.getElementById('productNameSection');
+
+        async function fetchProducts() {
+            try {
+                const response = await fetch('/api/products');
+                if (!response.ok) {
+                    throw new Error('Помилка завантаження продуктів');
+                }
+                const products = await response.json();
+                populateProductDropdown(products);
+                renderProducts(products);
+            } catch (error) {
+                console.error('❌ Сталася помилка:', error);
+            }
+        }
+
+        function populateProductDropdown(products) {
+            productSelect.innerHTML = '<option value="" disabled selected>Оберіть продукт</option>';
+            products.forEach(product => {
+                const option = document.createElement('option');
+                option.value = product.name;
+                option.textContent = product.name;
+                productSelect.appendChild(option);
+            });
+        }
+
+        function renderProducts(products) {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = '';
+
+            products.forEach(product => {
+                productList.innerHTML += `
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title text-center">${product.name}</h5>
+                            <p class="card-text flex-grow-1 text-center">${product.description}</p>
+                            <p class="text-center mt-3"><strong>${product.price} грн / ${product.unit}</strong></p>
+                            <button class="btn btn-primary w-100 mt-3 buy-btn" data-product="${product.name}" data-quantity="${product.unit}">
+                                Купити
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            });
+
+            attachBuyButtonListeners();
+        }
+
+        function attachBuyButtonListeners() {
+            const updatedBuyButtons = document.querySelectorAll('.buy-btn');
+            updatedBuyButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productName = button.dataset.product;
+                    const productQuantity = button.dataset.quantity;
+
+                    productNameInput.value = productName;
+                    productQuantityInput.value = productQuantity;
+
+                    document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        }
+
+        fetchProducts();
+
         const buyButtons = document.querySelectorAll('.buy-btn');
         const productNameInput = document.getElementById('productNameSection');
         const productQuantityInput = document.getElementById('productQuantitySection');

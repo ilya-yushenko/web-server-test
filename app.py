@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from datetime import datetime
+import json
 import requests
 
 app = Flask(__name__)
@@ -48,6 +49,19 @@ def prepare_customer_message(customer):
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+@app.route('/api/products', methods=['GET'])
+def get_products():
+    try:
+        json_path = os.path.join(os.getcwd(), 'products.json')
+        with open(json_path, 'r', encoding='utf-8') as file:
+            products = json.load(file)
+        return jsonify(products), 200
+    except FileNotFoundError:
+        return jsonify({"error": "Файл products.json не знайдений"}), 500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route('/order', methods=['POST'])
@@ -126,10 +140,10 @@ def contact_us():
     return jsonify({'message': '❌ Внутрішня помилка сервера. Спробуйте пізніше.'}), 500
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
-
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
+
+
+# if __name__ == '__main__':
+#     port = int(os.environ.get('PORT', 5000))
+#     app.run(host='0.0.0.0', port=port)

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Липовий мед",
+    "description": "Ароматний мед з ніжним квітковим присмаком, багатий на корисні властивості.",
+    "price": 200,
+    "unit": "500 г",
+    "image": "/static/images/img_linden_honey.webp"
+  },
+  {
+    "id": 2,
+    "name": "Гречаний мед",
+    "description": "Насичений темний мед із яскравим ароматом та високим вмістом заліза.",
+    "price": 180,
+    "unit": "500 г",
+    "image": "/static/images/img_buckwheat_honey.webp"
+  },
+  {
+    "id": 3,
+    "name": "Акацієвий мед",
+    "description": "Світлий, прозорий мед з ніжним, солодким смаком акацієвих квітів.",
+    "price": 220,
+    "unit": "500 г",
+    "image": "/static/images/img_acacia_honey.webp"
+  },
+  {
+    "id": 4,
+    "name": "Соняшниковий мед",
+    "description": "Золотистий мед із приємним фруктовим ароматом та високим вмістом глюкози.",
+    "price": 150,
+    "unit": "500 г",
+    "image": "/static/images/img_sunflower_honey.webp"
+  },
+  {
+    "id": 5,
+    "name": "Ріпаковий мед",
+    "description": "Кремовий мед з ніжною текстурою та тонким ароматом.",
+    "price": 170,
+    "unit": "500 г",
+    "image": "/static/images/img_rapeseed_honey.webp"
+  },
+  {
+    "id": 6,
+    "name": "Мед із різнотрав'я",
+    "description": "Ароматний мед із багатим букетом польових трав.",
+    "price": 190,
+    "unit": "500 г",
+    "image": "/static/images/img_mixed_herbs_honey.webp"
+  }
+]
